@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Rohit Salon | Hair, Beard &amp; Skin Care in Chalisgaon</title>
+<meta name="description" content="The Rohit Salon in Chalisgaon: haircuts, beard grooming, hair spa, facials and massage. Book your appointment online.">
+<meta property="og:title" content="The Rohit Salon, Chalisgaon">
+<meta property="og:description" content="Look Good, Feel Confident. Book online.">
+<meta property="og:image" content="assets/images/banners/hero-banner.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/images/branding/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Montserrat:wght@600;700;800&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HairSalon","name":"The Rohit Salon","telephone":"+918788357199","address":{"@type":"PostalAddress","streetAddress":"Magar Plaza, Dhule Road, JJ Anna Nagar","addressLocality":"Chalisgaon","addressRegion":"Maharashtra","addressCountry":"IN"}}</script>
+<script type="module" src="js/main.js"></script><script type="module" src="js/extras.js"></script><script type="module" src="js/fx.js"></script>
+</head>
+<body>
+<header class="top">
+  <a href="#" class="brand"><img data-img="logo" alt="The Rohit Salon logo" width="98" height="55"></a>
+  <button id="menuBtn" class="menu" aria-label="Menu">☰</button>
+  <nav><a href="about.html">About</a><a href="#services">Services</a><a href="#pricing">Price cards</a><a href="#shop">The shop</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a><a class="btn sm" href="#" data-book>Book appointment</a></nav>
+</header>
+
+<main>
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div>
+  <div class="hero-in">
+    <div class="hero-copy">
+      <div id="busyBar" class="busybar" hidden>We are busy right now, so online booking is paused. Please call or WhatsApp us.</div>
+      <p class="eyebrow">Hair · Beard · Skin · Grooming · Wellness</p>
+      <h1>Look Good.<br><em>Feel Confident.</em></h1>
+      <p class="lead">Haircuts, beard grooming, skin care and wellness at The Rohit Salon, Chalisgaon. Pick a time and book online in under a minute.</p>
+      <div class="cta-row">
+        <a class="btn" href="#" data-book>Book appointment</a>
+        <a class="btn ghost" data-tel href="tel:">Call now</a>
+        <a class="btn ghost" data-wa href="#" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+    <div class="hero-art"><img data-img="hero" alt="Look Good, Feel Confident at The Rohit Salon" fetchpriority="high" width="1672" height="941"></div>
+  </div>
+</section>
+<div class="marquee" aria-hidden="true"><div class="track"><span>Hair Cut</span><span>Beard</span><span>Hair Spa</span><span>Facial</span><span>Head Massage</span><span>De Tan</span><span>Cleanup</span><span>Grooming</span><span>Hair Cut</span><span>Beard</span><span>Hair Spa</span><span>Facial</span><span>Head Massage</span><span>De Tan</span><span>Cleanup</span><span>Grooming</span></div></div>
+
+<section id="services" class="wrap">
+  <h2>Services and prices</h2>
+  <div id="serviceList"><p class="empty">Loading services…</p></div>
+</section>
+
+<section id="pricing" class="wrap">
+  <h2>Our price cards</h2>
+  <p class="note">Tap a card to enlarge. Online booking uses the prices listed above.</p>
+  <div class="cards">
+    <img src="assets/images/services/price-card-hair.png" alt="Hair services and prices card" data-zoom loading="lazy" width="1024" height="1536">
+    <img src="assets/images/services/price-card-skin-wellness.png" alt="Skin and wellness services and prices card" data-zoom loading="lazy" width="1024" height="1536">
+  </div>
+</section>
+
+<section id="shop" class="wrap">
+  <h2>Inside the shop</h2>
+  <div class="shop">
+    <img src="assets/images/salon/salon-interior.png" alt="Salon interior with styling chairs and waiting sofa" loading="lazy" data-zoom>
+    <img src="assets/images/salon/salon-styling-station.png" alt="Styling chair and mirror wall" loading="lazy" data-zoom>
+    <img src="assets/images/salon/salon-front.png" alt="Shopfront of The Rohit Salon" loading="lazy" data-zoom>
+  </div>
+</section>
+
+<section id="offers" class="wrap" hidden><h2>Offers</h2><div id="offerList" class="cards"></div></section>
+<section id="gallery" class="wrap" hidden><h2>Gallery</h2><div id="galFilter" class="bar" role="group" aria-label="Filter gallery"></div><div id="galleryList" class="shop"></div></section>
+<section id="reviews" class="wrap"><h2>What customers say</h2><div id="reviewList"><p class="empty">Reviews appear here after we approve them.</p></div>
+<form id="reviewForm" class="mini"><h3>Leave a review</h3><label>Name<input id="rn" maxlength="60" required></label>
+<label>Rating<select id="rr"><option>5</option><option>4</option><option>3</option><option>2</option><option>1</option></select></label>
+<label>Your review<textarea id="rt" rows="3" maxlength="600" required></textarea></label><button class="btn">Send review</button></form></section>
+<section id="enquire" class="wrap"><h2>Send us a message</h2><form id="contactForm" class="mini"><label>Name<input id="cn" maxlength="60" required></label>
+<label>Mobile number<input id="cm" type="tel" inputmode="numeric" required></label><label>Email (optional)<input id="ce" type="email"></label>
+<label>Message<textarea id="cg" rows="3" maxlength="800" required></textarea></label><button class="btn">Send message</button></form></section>
+<section id="card" class="wrap" hidden><h2>Connect with us</h2><div id="cardBox" class="mini"></div></section>
+<section id="contact" class="wrap two">
+  <div><h2>Visit us</h2><p data-cfg="address"></p>
+    <p><a data-tel href="tel:" data-cfg="phone"></a></p>
+    <a class="btn ghost" data-map href="#" target="_blank" rel="noopener">Get directions</a></div>
+  <div><h2>Opening hours</h2><ul id="hours" class="hours"></ul><small>Sample hours until updated in admin.</small></div>
+</section>
+</main>
+
+<footer><span data-cfg="name"></span> · <span data-cfg="address"></span> · <a href="about.html">About</a> · <a href="services.html">All services</a> · <a href="lookup.html">Check my booking</a> · <a href="admin/login.html">Admin</a></footer>
+<a class="fab" data-wa href="#" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">WhatsApp</a>
+
+<dialog id="bookDialog" aria-labelledby="bt">
+  <h2 id="bt">Book an appointment</h2>
+  <form id="bookForm" novalidate>
+    <label>Service<select id="service" required></select></label>
+    <label>Date<input id="date" type="date" required></label>
+    <div id="slots" class="slots" role="group" aria-label="Available times"></div><input id="time" type="hidden">
+    <label>Full name<input id="name" autocomplete="name" required></label>
+    <label>Mobile number<input id="mobile" type="tel" inputmode="numeric" autocomplete="tel" placeholder="10-digit number" required></label>
+    <label>Email (optional)<input id="email" type="email" autocomplete="email"></label>
+    <label>Message (optional)<textarea id="message" rows="2" maxlength="500"></textarea></label>
+    <div class="cta-row"><button class="btn" id="confirm">Confirm booking</button><button type="button" class="btn ghost" data-close>Cancel</button></div>
+  </form>
+  <div id="done" hidden><h3>Booking confirmed</h3><div id="doneBody"></div>
+    <div class="cta-row"><a class="btn" id="doneWa" target="_blank" rel="noopener">Message us on WhatsApp</a><button class="btn ghost" onclick="print()">Print</button><button class="btn ghost" data-close>Close</button></div></div>
+</dialog>
+<dialog id="zoomDialog" class="zoom" data-close aria-label="Image viewer"><button class="zb prev" data-nav="-1" aria-label="Previous image">‹</button><img id="zoomImg" alt="Enlarged view"><button class="zb next" data-nav="1" aria-label="Next image">›</button><button class="zb x" data-close aria-label="Close">×</button></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Check my booking | The Rohit Salon</title><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Montserrat:wght@600;700;800&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/style.css"></head>
+<body><header class="top"><a href="index.html" class="brand"><img src="assets/images/branding/logo.png" alt="The Rohit Salon" width="98" height="55"></a><a class="btn sm" href="index.html">Home</a></header>
+<main class="wrap"><h1>Check my booking</h1><p class="note">Enter the Booking ID from your confirmation and the mobile number you booked with.</p>
+<form id="f" class="mini"><label>Booking ID<input id="id" maxlength="10" autocapitalize="characters" required></label>
+<label>Mobile number<input id="m" type="tel" inputmode="numeric" required></label><button class="btn">Find booking</button></form>
+<div id="out" class="mini" aria-live="polite"></div></main><div id="toast" role="status"></div>
+<script type="module">
+import { api } from "./js/api.js"; import { $, esc, inr, toast, to12h } from "./js/utils.js"; import { salonConfig } from "./js/config.js";
+$("#f").onsubmit = async e => { e.preventDefault(); $("#out").innerHTML = "";
+  try {
+    const b = await api("/bookings/lookup", "POST", { id: $("#id").value.trim(), mobile: $("#m").value });
+    $("#out").innerHTML = `<h2>Booking ${esc(b.id)}</h2><dl><dt>Name</dt><dd>${esc(b.name)}</dd><dt>Service</dt><dd>${esc(b.serviceName)} (${inr(b.price)})</dd><dt>Date</dt><dd>${esc(b.date)}</dd><dt>Time</dt><dd>${to12h(b.time)} to ${to12h(b.endTime)}</dd><dt>Status</dt><dd><b>${esc(b.status)}</b></dd></dl>
+    <a class="btn ghost" href="https://wa.me/${salonConfig.whatsappNumber}?text=${encodeURIComponent("Hi, about my booking " + b.id)}" target="_blank" rel="noopener">Message us on WhatsApp</a>${["Pending", "Confirmed"].includes(b.status) ? ' <button class="btn ghost" id="cx">Cancel booking</button>' : ""}`;
+    $("#cx")?.addEventListener("click", async () => {
+      if (!confirm("Cancel this booking?")) return;
+      try { await api("/bookings/cancel", "POST", { id: b.id, mobile: $("#m").value }); toast("Booking cancelled."); $("#f").requestSubmit(); }
+      catch (x) { toast([400, 404].includes(x.status) ? x.message : "Something went wrong. Please try again.", "err"); }
+    });
+  } catch (x) { toast(x.status === 404 ? x.message : "Something went wrong. Please try again.", "err"); } };
+</script><script type="module" src="js/fx.js"></script></body></html>

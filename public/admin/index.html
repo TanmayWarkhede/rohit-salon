@@ -1,0 +1,28 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex"><link rel="icon" href="../assets/images/branding/logo.png"><title>Admin | The Rohit Salon</title><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="../css/style.css"><link rel="stylesheet" href="../css/admin.css">
+<script type="module" src="../js/admin.js"></script><script type="module" src="../js/admin-extra.js"></script></head>
+<body><div class="adm"><nav class="side" id="tabs"><div class="sbrand"><img src="../assets/images/branding/logo.png" alt=""><div><b>The Rohit Salon</b><small>Admin</small></div></div>
+<button data-t="dash" data-ic="◈" class="on">Dashboard</button><button data-t="book" data-ic="☰">Bookings</button><button data-t="sched" data-ic="◷">Schedule</button><button data-t="rep" data-ic="▤">Reports</button><button data-t="svc" data-ic="✂">Services</button><button data-g="offers" data-ic="✦">Offers</button><button data-g="gallery" data-ic="▣">Gallery</button><button data-g="reviews" data-ic="★">Reviews</button><button data-g="inquiries" data-ic="✉">Inquiries</button><button data-t="set" data-ic="⚙">Settings</button>
+<a class="vsite" href="../index.html" target="_blank" rel="noopener">View website ↗</a><button class="out" id="out" data-ic="⏻">Sign out</button></nav>
+<main>
+<section class="pane" id="dash"><h1>Dashboard</h1><div id="avail"></div><div class="stats" id="stats">Loading…</div><div id="ana"></div></section>
+<section class="pane" id="book" hidden><h1>Bookings</h1>
+<div class="bar"><input id="q" placeholder="Booking ID, mobile or name" aria-label="Search"><input id="fd" type="date" aria-label="Filter by date"><select id="fs" aria-label="Status"><option value="">All statuses</option><option>Pending</option><option>Confirmed</option><option>Completed</option><option>Cancelled</option><option>No Show</option></select><button class="btn sm" id="find">Search</button></div>
+<div class="tbl"><table><thead><tr><th>When</th><th>Customer</th><th>Service</th><th>ID</th><th>Status</th><th></th></tr></thead><tbody id="rows"></tbody></table></div></section>
+<section class="pane" id="rep" hidden><h1>Reports</h1>
+<div class="bar"><label>From<input id="rf" type="date"></label><label>To<input id="rt" type="date"></label><button class="btn sm" id="repGo">Show</button><button class="btn sm ghost" id="repX">Download Excel</button></div>
+<div class="stats" id="repStats"></div><p class="note">Revenue is an estimate: completed bookings at listed prices. Expected revenue counts every booking except Cancelled and No show.</p>
+<h3>Day by day</h3><div class="tbl"><table><thead><tr><th>Date</th><th>Bookings</th><th>Completed</th><th>Cancelled</th><th>No show</th><th>Revenue</th><th>Expected</th></tr></thead><tbody id="repDays"></tbody></table></div>
+<h3>Customers and services</h3><div class="tbl"><table><thead><tr><th>Date</th><th>Time</th><th>Customer</th><th>Mobile</th><th>Service</th><th>Duration</th><th>Price</th><th>Status</th></tr></thead><tbody id="repRows"></tbody></table></div></section>
+<section class="pane" id="sched" hidden><h1>Day schedule</h1><div class="bar"><input id="sd2" type="date" aria-label="Date"></div><div id="day"></div></section><section class="pane" id="svc" hidden><h1>Services</h1><div class="bar"><button class="btn sm" id="addSvc">Add service</button><button class="btn sm ghost" id="seed">Load sample services</button></div>
+<div class="tbl"><table><thead><tr><th>Name</th><th>Category</th><th>Price</th><th>Min</th><th>On</th><th></th></tr></thead><tbody id="svcRows"></tbody></table></div></section>
+<section class="pane" id="set" hidden><h1>Settings</h1><form id="setForm"><div class="grid2" id="setFields"></div><h3>Opening hours</h3><div id="hrs"></div><button class="btn">Save settings</button></form><p><button type="button" class="btn ghost" id="testAlert">Send a test email to the owner</button></p></section>
+<section class="pane" id="gen" hidden><h1 id="genT"></h1><div class="bar"><button class="btn sm" id="genAdd">Add</button></div><div class="tbl"><table><thead id="genH"></thead><tbody id="genB"></tbody></table></div></section></main>
+<dialog id="genDlg"><form id="genForm"><h2>Edit</h2><div id="genF"></div><div class="cta-row"><button class="btn">Save</button><button type="button" class="btn ghost" id="genX">Cancel</button></div></form></dialog></div>
+<dialog id="svcDlg"><form id="svcForm"><h2>Service</h2><input type="hidden" id="sid">
+<label>Name<input id="sn" required></label><label>Category<input id="sc" required></label><label>Description<input id="sd"></label>
+<label>Price (₹)<input id="sp" type="number" min="0" required></label><label>Online price (₹, optional)<input id="so" type="number" min="0"></label>
+<label>Duration (minutes)<input id="sm" type="number" min="5" step="5" required></label>
+<label><input id="sx" type="checkbox"> Show "onwards" after price</label><label><input id="sf" type="checkbox"> Featured</label><label><input id="sa" type="checkbox" checked> Active</label>
+<div class="cta-row"><button class="btn">Save</button><button type="button" class="btn ghost" data-close2>Cancel</button></div></form></dialog>
+<div id="toast" role="status"></div></body></html>

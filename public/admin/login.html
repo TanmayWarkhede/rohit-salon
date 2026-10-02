@@ -1,0 +1,14 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex"><title>Admin sign in</title><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="../css/style.css"><link rel="stylesheet" href="../css/admin.css"></head>
+<body class="loginpage"><form id="f" class="loginbox"><img src="../assets/images/branding/logo.png" alt="The Rohit Salon" width="240" height="135" style="border-radius:14px;margin:0 auto 1rem;max-width:100%;height:auto">
+<h1>Admin sign in</h1><label>Email<input id="email" type="email" autocomplete="username" required></label>
+<label>Password<input id="pw" type="password" autocomplete="current-password" required></label>
+<p id="err" class="err" role="alert"></p><button class="btn" id="go">Sign in</button></form>
+<script type="module">
+import { login } from "../js/auth.js";
+const $ = s => document.querySelector(s);
+$("#f").onsubmit = async e => { e.preventDefault(); $("#err").textContent = ""; $("#go").disabled = true;
+  try { await login($("#email").value, $("#pw").value); location.href = "index.html"; }
+  catch (x) { $("#err").textContent = x.status === 429 ? x.message : "Wrong email or password."; }
+  $("#go").disabled = false; };
+</script></body></html>
